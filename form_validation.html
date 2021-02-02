@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type "application/javascript">
+            function checkdata()
+                {
+                //Create reference to the input elements
+                var username = document.getElementById("name");
+                var emailid  = document.getElementById("email");
+                var varzipcode  = document.getElementById("zipcode")
+                //check for missing entries
+                if(username.value==""){
+                    window.alert("Please enter the name");
+                    username.focus();
+                    return false;
+                }
+                //check if email is empty
+                if(emailid.value==""){
+                    window.alert("Please enter email address");
+                    emailid.focus();
+                    return false;
+                }
+                //check is zipcode is empty
+                if(zipcode.value==""){
+                    window.alert("Please enter the zipcode");
+                    varzipcode.focus();
+                    return false;
+                }
+                return true;
+                }
+        </script>
+        <title>Contact Details</title>
+    </head>
+    <body>
+        <h2>Enter your contact Details:</h2><br>
+        <form id="form1" onsubmit="return checkdata()">
+            <label for="name">Name :</label>
+            <input type="text" id="name" name="name">
+            <br>
+            <br>
+            <label for="email">E-mail ID :</label>
+            <input type="email" id="email" name="email">
+            <br>
+            <br>
+            <label for=zipcode>zipcode</label>
+            <input type="number" id="zipcode" name="zipcode">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </body>
+</html>
